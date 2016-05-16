@@ -114,6 +114,8 @@ public class WaterDropLoadingView extends View {
 
         if (sweepAngle < 310) {
             canvas.drawArc(progressRectF, startAngle, sweepAngle, false, mPaint);
+            //100毫秒后重绘
+           postInvalidateDelayed(100);
         } else {
             canvas.drawArc(progressRectF, -90, 360, false, mPaint);
 
@@ -126,8 +128,9 @@ public class WaterDropLoadingView extends View {
                 startAngle = 90;
                 sweepAngle = 0;
                 triangleHeight = 0;
+            //500毫秒后重绘
+            postInvalidateDelayed(500);
         }
-        //100毫秒后重绘
-        postInvalidateDelayed(100);
+        
     }
 }
